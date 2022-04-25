@@ -8,9 +8,12 @@ namespace BinarySearchProg
 {
     public class Binary<B> where B : IComparable<B>
     {
+        //Variables
         public B NodeData { get; set; }
         public Binary<B> LeftTree { get; set; }
         public Binary<B> RightTree { get; set; }
+
+
         public Binary(B nodedata)
         {
             this.NodeData = nodedata;
@@ -20,6 +23,9 @@ namespace BinarySearchProg
         int leftCount = 0, rightCount = 0;
         bool result = false;
 
+        /// <summary>
+        /// Method to add elements
+        /// </summary>
         public void Insert(B Item)
         {
             B currentNodeValue = this.NodeData;
@@ -39,6 +45,9 @@ namespace BinarySearchProg
             }
         }
 
+        /// <summary>
+        /// Medthod to Display
+        /// </summary>
         public void Display()
         {
             if(this.LeftTree != null)
@@ -54,10 +63,17 @@ namespace BinarySearchProg
             }
         }
 
+        /// <summary>
+        /// To Fetch the size of the tree 
+        /// </summary>
         public void GetSize()
         {
             Console.WriteLine("Size" + " " + (1 + this.leftCount + this.rightCount));
         }
+
+        /// <summary>
+        /// To check the existing nodes
+        /// </summary>
         public bool IfExists(B element, Binary<B> node)
         {
             if (node == null)
