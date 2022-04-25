@@ -46,6 +46,32 @@ namespace BinarySearchProg
         }
 
         /// <summary>
+        /// Method to search elements
+        /// </summary>
+        public bool Search(B element, Binary<B> node)
+        {
+            if (node == null)
+            {
+                return false;
+            }
+            if (node.NodeData.Equals(element))
+            {
+                Console.WriteLine("Found the element in BST" + " " + node.NodeData);
+                result = true;
+            }
+            
+            if (element.CompareTo(node.NodeData) < 0)
+            {
+                Search(element, node.LeftTree);
+            }
+            if (element.CompareTo(node.NodeData) > 0)
+            {
+                Search(element, node.RightTree);
+            }
+            return result;
+        }
+
+        /// <summary>
         /// Medthod to Display
         /// </summary>
         public void Display()
